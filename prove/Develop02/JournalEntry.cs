@@ -9,14 +9,11 @@ public class JournalEntry
     public string _prompt;
     public string _entry;
 
-    public string makeThePrompt()
+    public string MakeThePrompt()
     {
         return $"{_date}|{_prompt}|{_entry}";
     }
 
   
-    public void readThePrompt()
-    {
-
-    }
+   
 }

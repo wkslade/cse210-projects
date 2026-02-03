@@ -9,7 +9,7 @@ public class Journal
     public List<string> _prompts = new List<string>();
     public string _currentPrompt;
 
-    public List<string> _userEntry = new List<string>();
+    public List<JournalEntry> _userEntry = new List<JournalEntry>();
 
     public void InitializePrompts(List<string> listOfPrompts)
     {
@@ -27,24 +27,23 @@ public class Journal
     public void Save(string filename)
     {
 
-
         //filename = "Journal.txt";
 
-        using (StreamWriter outputFile = new StreamWriter(filename, true))
+        using (StreamWriter outputFile = new StreamWriter(filename, false))
         {
             for (int i = 0; i < _userEntry.Count; i++)
             //foreach(JournalEntry i in _userEntry)
             {
                 // You can add text to the file with the WriteLine method
                 // outputFile.WriteLine("This will be the first line in the file.");
-                Console.WriteLine($" {_userEntry[i]}");
+                Console.WriteLine($"{_userEntry[i].MakeThePrompt}");
                // string text = i.makeThePrompt();
-                outputFile.WriteLine($" {_userEntry[i]} \n");
-                
+                //outputFile.WriteLine($" {_userEntry[i]} \n");
+                outputFile.WriteLine($"{_userEntry[i].MakeThePrompt()}");
             }
-            outputFile.WriteLine("test 1");
-            outputFile.WriteLine("test 2");
-            Console.WriteLine("itWorked");
+            //outputFile.WriteLine("test 1");
+            //outputFile.WriteLine("test 2");
+            Console.WriteLine("Save succesful");
 
         }
     }
@@ -60,15 +59,15 @@ public class Journal
             loadedEntry._date = parts[0];
             loadedEntry._prompt = parts[1];
             loadedEntry._entry = parts[2];
-            _userEntry.Add(loadedEntry.makeThePrompt());
-
+            //_userEntry.Add(loadedEntry.MakeThePrompt());
+            _userEntry.Add(loadedEntry);
         }
     }
     public void Display()
     {
         for (int i = 0; i < _userEntry.Count; i++)
         {
-            Console.WriteLine($" {_userEntry[i]}");
+            Console.WriteLine($" {_userEntry[i].MakeThePrompt()}");
         }
 
     }

@@ -40,7 +40,8 @@ class Program
                     currentResponceScript._date = theCurrentTime.ToShortDateString();
                     currentResponceScript._prompt = scripturStudy.PromptTheUser();
                     currentResponceScript._entry = Console.ReadLine();
-                    scripturStudy._userEntry.Add(currentResponceScript.makeThePrompt());
+                    //scripturStudy._userEntry.Add(currentResponceScript.MakeThePrompt());
+                    scripturStudy._userEntry.Add(currentResponceScript);
                     break;
                 case "2":
                     Console.WriteLine("Write in your dayly jurnal. ");
@@ -51,7 +52,8 @@ class Program
                     currentResponce._date = theCurrentTime.ToShortDateString();
                     currentResponce._prompt = WillJournal.PromptTheUser();
                     currentResponce._entry = Console.ReadLine();
-                    scripturStudy._userEntry.Add(currentResponce.makeThePrompt());
+                    //WillJournal._userEntry.Add(currentResponce.MakeThePrompt());
+                    WillJournal._userEntry.Add(currentResponce);
                     // statement sequence
                     break;
                 case "3":
