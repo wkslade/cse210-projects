@@ -15,7 +15,13 @@ public class Fraction
         _top = userTop;
     }
     public void SetBottom(int bottom){
-        _bottom = bottom;
+        if (bottom != 0){
+        Console.WriteLine("Line 19 Cannot divide by Zero?");
+        }
+        else{
+            bottom = _bottom;
+        }
+        
     }
     public void SetTopAndBottom(int userTop,int userBottom)
     {
