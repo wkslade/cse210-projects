@@ -15,6 +15,13 @@ class Program
         Console.WriteLine($"{m}");
         string math = WillMath.GetHomeworkList();
         Console.WriteLine($"{math}");
+        WritingAssignment WillPain = new WritingAssignment();
+        WillPain.SetWrite("Will", "englis", "a tale of awsome Will");
+        string NT = WillPain.GetTitleName();
+
+        String nw = WillPain.GetSummary();
+        Console.WriteLine($"{NT}");
+        Console.WriteLine($"{nw}");
 
     }
 }
