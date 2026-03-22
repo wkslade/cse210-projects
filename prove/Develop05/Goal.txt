@@ -1,1 +1,4 @@
-30
+1000
+chicken-eat more chicken-10-False- - 
+run -run from a tiger-1000-True- - 
+do 3 jacks-do 3 jumping jacks-10-False-0-3

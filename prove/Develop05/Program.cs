@@ -122,7 +122,7 @@ class Program
                     using (StreamWriter outputFile = new StreamWriter(filename, false))
                     {
                         outputFile.WriteLine($"{points}");
-                        for (int i1 = 0; i <= goal.Count; i1++)
+                        for (int i1 = 0; i1 < goal.Count; i1++)
                         //foreach(JournalEntry i in _userEntry)
                         {
                             // You can add text to the file with the WriteLine method
