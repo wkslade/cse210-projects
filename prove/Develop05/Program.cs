@@ -75,13 +75,18 @@ class Program
                             string name2 = Console.ReadLine();
                             Console.Write("Write a small description of your goal: ");
                             string smallDes2 = Console.ReadLine();
-                            Console.Write("How many points is this goal worth when compleat:");
+                            Console.Write("How many points is assosiated with this goal:");
                             int point2 = int.Parse(Console.ReadLine());
                             Checklist Checklist = new Checklist(name2, smallDes2, point2, false);
+
+                            Console.Write("How many times does it take to recive a bonus?");
+                            int frequency = int.Parse(Console.ReadLine());
+                            Checklist.SetFrequency(frequency);
 
                             Console.Write("How many bonus points will this be worth when you compleat all the checklist.");
                             int bonus = int.Parse(Console.ReadLine());
                             Checklist.SetBonus(bonus);
+
                             goal.Add(Checklist);
 
 
@@ -97,21 +102,65 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("List Goals");
+                    Console.WriteLine("The Goals are: ");
                     for (int i1 = 0; i1 < goal.Count; i1++)
                     {
-                        
-                        Console.WriteLine(goal[i1].GetName());
+                        string GS = goal[i1].GoalStatus();
+                        Console.WriteLine($"{i1}. {GS}");
+
                     }
 
                     break;
                 case 3:
+                    Console.WriteLine("Save Goals!");
+                    Console.Write("Which file would you like to save to: ");
+                    string filename = Console.ReadLine();
                     Console.WriteLine("");
+
+
+
+                    using (StreamWriter outputFile = new StreamWriter(filename, false))
+                    {
+                        outputFile.WriteLine($"{points}");
+                        for (int i1 = 0; i <= goal.Count; i1++)
+                        //foreach(JournalEntry i in _userEntry)
+                        {
+                            // You can add text to the file with the WriteLine method
+                            // outputFile.WriteLine("This will be the first line in the file.");
+                            Console.WriteLine($"{goal[i1].SaveString()}");
+                            // string text = i.makeThePrompt();
+                            //outputFile.WriteLine($" {_userEntry[i]} \n");
+                            outputFile.WriteLine($"{goal[i1].SaveString()}");
+                        }
+                        //outputFile.WriteLine("test 1");
+                        //outputFile.WriteLine("test 2");
+                        Console.WriteLine("Save succesful");
+
+                    }
+
+
+
+
+
+
+
                     break;
                 case 4:
                     Console.WriteLine("");
                     break;
                 case 5:
-                    Console.WriteLine("");
+                    Console.WriteLine("Record Event");
+                    for (int i1 = 0; i1 < goal.Count; i1++)
+                    {
+                        string itemname = goal[i1].GetName();
+                        Console.WriteLine($"{i1}. {itemname}");
+
+
+                    }
+                    int r = int.Parse(Console.ReadLine());
+                    int p = goal[r].Record();
+                    points += p;
+                    Console.WriteLine("Pick a goal to record: ");
                     break;
                 case 6:
                     Console.WriteLine("Thank you for setting goals with us!");

@@ -8,6 +8,14 @@ public abstract class Goal
     {
         return _name;
     }
+    public string GetShortDes()
+    {
+        return _shortDes;
+    }
+    public bool GetCompleat()
+    {
+        return _compleat;
+    }
     public Goal(string name, string shortDes, int pointValue, bool compleat)
     {
         _name = name;
@@ -16,6 +24,10 @@ public abstract class Goal
         _compleat = compleat;
         
     }
+    
 
     public abstract int TallyPoints();
+    public abstract string GoalStatus();
+    public abstract int Record();
+    public abstract string SaveString();
 }
