@@ -140,13 +140,63 @@ class Program
 
 
 
-
-
-
-
                     break;
                 case 4:
-                    Console.WriteLine("");
+                    Console.Write("From what file you you like to load from: ");
+                    filename = Console.ReadLine();
+
+                    string[] lines = System.IO.File.ReadAllLines(filename);
+
+                    foreach (string line in lines)
+                    //for (int l = 1; l < lines.Count(); l++)
+                    {
+                        string[] parts = line.Split('-');
+                        if (parts[0] == "1")
+                        {
+                             string name = parts[1];
+                            string smallDes = parts[2];
+                            int Pointval = int.Parse(parts[3]);
+                            bool com = bool.Parse(parts[4]);
+                            Simple loadedGoal = new Simple(name, smallDes, Pointval,com );
+                          
+                            //_userEntry.Add(loadedEntry.MakeThePrompt());
+                            goal.Add(loadedGoal);
+                        }
+                        else if (parts[0] == "2")
+                        {
+                            
+                             string name = parts[1];
+                            string smallDes = parts[2];
+                            int Pointval = int.Parse(parts[3]);
+                            bool com = bool.Parse(parts[4]);
+                            Eternal loadedGoal = new Eternal(name, smallDes, Pointval,com );
+                          
+                            //_userEntry.Add(loadedEntry.MakeThePrompt());
+                            goal.Add(loadedGoal);
+                        }
+                        else if (parts[0] == "3")
+                        {
+                            
+                             string name = parts[1];
+                            string smallDes = parts[2];
+                            int Pointval = int.Parse(parts[3]);
+                            bool com = bool.Parse(parts[4]);
+                            int bon = int.Parse(parts[5]);
+                            int pf = int.Parse(parts[6]);
+                            int f = int.Parse(parts[7]);
+                            Checklist loadedGoal = new Checklist(name, smallDes, Pointval,com );
+                            loadedGoal.SetBonus(bon);
+                            loadedGoal.SetPartFrequency(pf);
+                            loadedGoal.SetFrequency(f);
+                            //_userEntry.Add(loadedEntry.MakeThePrompt());
+                            goal.Add(loadedGoal);
+                        }
+                        else
+                        {
+                            points = int.Parse(parts[0]);
+                        }
+
+                    }
                     break;
                 case 5:
                     Console.WriteLine("Record Event");

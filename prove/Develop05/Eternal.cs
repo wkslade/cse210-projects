@@ -2,7 +2,7 @@ class Eternal : Goal
 {
     public Eternal(string name, string smallDes, int pointValue, bool compleat)
 
-       : base(name, smallDes, pointValue, compleat)
+       : base(name, smallDes, pointValue, compleat, 2)
     {
 
     }
@@ -29,6 +29,6 @@ class Eternal : Goal
     }
     public override string SaveString()
     {
-       return $"{_name}-{_shortDes}-{_pointValue}-{_compleat}- - ";
+       return $"{_type}-{_name}-{_shortDes}-{_pointValue}-{_compleat}- - ";
     }
 }

@@ -7,7 +7,7 @@ class Checklist : Goal
     protected int _Bonus;
     public Checklist(string name, string smallDes, int pointValue, bool compleat)
 
-        : base(name, smallDes, pointValue, compleat)
+        : base(name, smallDes, pointValue, compleat,3)
     {
 
     }
@@ -60,6 +60,6 @@ class Checklist : Goal
     }
      public override string SaveString()
     {
-       return $"{_name}-{_shortDes}-{_pointValue}-{_compleat}-{_partFrequency}-{_Frequency}";
+       return $"{_type}-{_name}-{_shortDes}-{_pointValue}-{_compleat}-{_Bonus}-{_partFrequency}-{_Frequency}";
     }
 }
