@@ -22,8 +22,8 @@ class Program
                     while (j != 3)
                     {
                         Console.WriteLine("OP amp menu");
-                        Console.WriteLine("1) Inverting Op amp output calculator");
-                        Console.WriteLine("2) non inverting op amp output calculator");
+                        Console.WriteLine("1) Non Inverting Op amp output calculator");
+                        Console.WriteLine("2) inverting op amp output calculator");
                         j = int.Parse(Console.ReadLine());
                         switch (j)
                         {
@@ -65,7 +65,7 @@ class Program
                                 Console.WriteLine("Non inverting Output calculation");
                                 break;
                             case 2:
-                                Console.WriteLine("Non invertin Output calucation");
+                                Console.WriteLine("invertin Output calucation");
                                 break;
                             case 3:
                                 Console.WriteLine("Returning to main menu");
