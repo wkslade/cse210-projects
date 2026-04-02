@@ -1,0 +1,5 @@
+This program is an Electrical Engineering calculator designed to compute output voltages for both inverting and non‑inverting operational amplifiers, as well as for various configurations of RLC band‑pass and pass‑band filters.
+Operational amplifiers share similar internal behavior but differ in configuration and the formulas used to determine their output. To model this cleanly, I implemented a parent OpAmp class and created child classes for the inverting and non‑inverting amplifier types, each handling its own output‑voltage calculation.
+Likewise, RLC filters—built from resistors, capacitors, and inductors—operate on similar principles but can be arranged in multiple configurations. To support this, I created a parent RLCFilter class and derived specialized child classes for each filter configuration.
+
+I also included functions that display a text‑based schematic for each circuit configuration.
