@@ -12,7 +12,8 @@ class RLCBandRejectUP : RLCFilter
         _r = r;
       //  _scmatic = scmatic;
         _name = name;
-
+        _bandwidth = _r/_l;
+        _w = MathF.Sqrt(1/(_l*_c));
 
 
         _scmatic = [$"         c = {_c} f             ",

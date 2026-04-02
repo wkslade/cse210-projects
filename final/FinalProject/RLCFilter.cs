@@ -24,7 +24,7 @@ public RLCFilter(float c, float l, float r, string name)
     }
 public void DisplayScmatic()
     {
-        for (int i = 0; i <= _scmatic.Count; i++ )
+        for (int i = 0; i < _scmatic.Count; i++ )
         {
             Console.WriteLine(_scmatic[i]);
         }
